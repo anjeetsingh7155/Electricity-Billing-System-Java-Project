@@ -1,0 +1,119 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Login",
+            "request": "launch",
+            "mainClass": "electricity.billing.system.Login",
+            "projectName": "Electricity-Billing-System-Java-Project_aee8ee5b"
+        },
+        {
+            "type": "java",
+            "name": "Signup",
+            "request": "launch",
+            "mainClass": "electricity.billing.system.Signup",
+            "projectName": "Electricity-Billing-System-Java-Project_aee8ee5b"
+        },
+        {
+            "type": "java",
+            "name": "Splash",
+            "request": "launch",
+            "mainClass": "electricity.billing.system.Splash",
+            "projectName": "Electricity-Billing-System-Java-Project_aee8ee5b"
+        },
+        {
+            "type": "java",
+            "name": "bill_details",
+            "request": "launch",
+            "mainClass": "electricity.billing.system.bill_details",
+            "projectName": "Electricity-Billing-System-Java-Project_aee8ee5b"
+        },
+        {
+            "type": "java",
+            "name": "calculate_bill",
+            "request": "launch",
+            "mainClass": "electricity.billing.system.calculate_bill",
+            "projectName": "Electricity-Billing-System-Java-Project_aee8ee5b"
+        },
+        {
+            "type": "java",
+            "name": "customer_details",
+            "request": "launch",
+            "mainClass": "electricity.billing.system.customer_details",
+            "projectName": "Electricity-Billing-System-Java-Project_aee8ee5b"
+        },
+        {
+            "type": "java",
+            "name": "deposit_details",
+            "request": "launch",
+            "mainClass": "electricity.billing.system.deposit_details",
+            "projectName": "Electricity-Billing-System-Java-Project_aee8ee5b"
+        },
+        {
+            "type": "java",
+            "name": "generate_bill",
+            "request": "launch",
+            "mainClass": "electricity.billing.system.generate_bill",
+            "projectName": "Electricity-Billing-System-Java-Project_aee8ee5b"
+        },
+        {
+            "type": "java",
+            "name": "main_class",
+            "request": "launch",
+            "mainClass": "electricity.billing.system.main_class",
+            "projectName": "Electricity-Billing-System-Java-Project_aee8ee5b"
+        },
+        {
+            "type": "java",
+            "name": "meterInfo",
+            "request": "launch",
+            "mainClass": "electricity.billing.system.meterInfo",
+            "projectName": "Electricity-Billing-System-Java-Project_aee8ee5b"
+        },
+        {
+            "type": "java",
+            "name": "newCustomer",
+            "request": "launch",
+            "mainClass": "electricity.billing.system.newCustomer",
+            "projectName": "Electricity-Billing-System-Java-Project_aee8ee5b"
+        },
+        {
+            "type": "java",
+            "name": "pay_bill",
+            "request": "launch",
+            "mainClass": "electricity.billing.system.pay_bill",
+            "projectName": "Electricity-Billing-System-Java-Project_aee8ee5b"
+        },
+        {
+            "type": "java",
+            "name": "payment_bill",
+            "request": "launch",
+            "mainClass": "electricity.billing.system.payment_bill",
+            "projectName": "Electricity-Billing-System-Java-Project_aee8ee5b"
+        },
+        {
+            "type": "java",
+            "name": "update_information",
+            "request": "launch",
+            "mainClass": "electricity.billing.system.update_information",
+            "projectName": "Electricity-Billing-System-Java-Project_aee8ee5b"
+        },
+        {
+            "type": "java",
+            "name": "view_information",
+            "request": "launch",
+            "mainClass": "electricity.billing.system.view_information",
+            "projectName": "Electricity-Billing-System-Java-Project_aee8ee5b"
+        }
+    ]
+}

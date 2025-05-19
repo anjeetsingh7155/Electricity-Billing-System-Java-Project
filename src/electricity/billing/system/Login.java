@@ -82,6 +82,8 @@ public class Login extends JFrame implements ActionListener {
                  database d = new database();
                  String queryy = "select * from Signup where username = '"+susername+"' and password = '"+spassword+"' and usertype ='"+suser+"'";
                  ResultSet resultSet = d.statement.executeQuery(queryy);
+                 System.out.println("Login Query: " + queryy);
+
 
                  if (resultSet.next()){
                      String meter = resultSet.getString("meter_no");

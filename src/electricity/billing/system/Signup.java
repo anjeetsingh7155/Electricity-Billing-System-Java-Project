@@ -56,7 +56,7 @@ public class Signup extends JFrame implements ActionListener {
         name.setBounds(30,180,125,20);
         add(name);
 
-        nameText = new TextField("");
+        nameText = new TextField();
         nameText.setBounds(170,180,125,20);
         add(nameText);
 
@@ -96,7 +96,7 @@ public class Signup extends JFrame implements ActionListener {
                 String user = loginASCho.getSelectedItem();
                 if (user.equals("Customer")){
                     Employer.setVisible(false);
-                    nameText.setEditable(false);
+                    nameText.setEditable(true);
                     EmployerText.setVisible(false);
                     meterNo.setVisible(true);
                     meterText.setVisible(true);
@@ -139,30 +139,40 @@ public class Signup extends JFrame implements ActionListener {
     }
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource()== create){
+        if (e.getSource() == create) {
             String sloginAs = loginASCho.getSelectedItem();
             String susername = userNameText.getText();
             String sname = nameText.getText();
             String spassword = passwordText.getText();
-            String smeter = meterText.getText();
-            try{
+            String smeter = sloginAs.equals("Admin") ? EmployerText.getText() : meterText.getText();
+            try {
                 database c = new database();
-                String query= null;
-                if (loginASCho.equals("Admin")) {
-                    query = "insert into Signup value('" + smeter + "', '" + susername + "', '" + sname + "','" + spassword + "','" + sloginAs + "')";
-                }else {
-                    query = "update Signup set username = '"+susername+"', password = '"+spassword+"', usertype = '"+sloginAs+"' where meter_no = '"+smeter+"'";
-                }
-                 c.statement.executeUpdate(query);
+                String query = null;
 
-                JOptionPane.showMessageDialog(null,"Account Created");
+                if (sloginAs.equals("Admin")) {
+                    // Admin ke liye insert query
+                    query = "insert into Signup (meter_no, username, name, password, usertype) values ('" + smeter + "', '" + susername + "', '" + sname + "','" + spassword + "','" + sloginAs + "')";
+                } else {
+                    ResultSet rs = c.statement.executeQuery("select * from Signup where meter_no = '" + smeter + "'");
+                    if (rs.next()) {
+                        
+                        query = "update Signup set username = '" + susername + "', password = '" + spassword + "', usertype = '" + sloginAs + "' where meter_no = '" + smeter + "'";
+                    } else {
+                        query = "insert into Signup (meter_no, username, name, password, usertype) values ('" + smeter + "', '" + susername + "', '" + sname + "','" + spassword + "','" + sloginAs + "')";
+                    }
+                }
+
+                System.out.println("Signup Query: " + query);
+                c.statement.executeUpdate(query);
+
+                JOptionPane.showMessageDialog(null, "Account Created");
                 setVisible(false);
                 new Login();
 
-            }catch (Exception E){
+            } catch (Exception E) {
                 E.printStackTrace();
             }
-        } else if (e.getSource()==back) {
+        } else if (e.getSource() == back) {
             setVisible(false);
             new Login();
         }

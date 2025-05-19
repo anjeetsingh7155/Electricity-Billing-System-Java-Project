@@ -7,7 +7,7 @@ public class database {
     Statement statement;
     database(){
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Bill_system","root","AyushVish");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/bill_system","root","6268547129");
             statement = connection.createStatement();
         }catch (Exception e){
             e.printStackTrace();

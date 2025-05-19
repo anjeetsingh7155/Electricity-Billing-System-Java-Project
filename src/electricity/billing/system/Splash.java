@@ -11,7 +11,7 @@ public class Splash extends JFrame {
         ImageIcon imageIcon2 = new ImageIcon( imageOne);
         JLabel imageLabel = new JLabel(imageIcon2);
         add(imageLabel);
-
+        
         setSize(600,400);
         setLocation(500,200);
         setVisible(true);
@@ -20,13 +20,12 @@ public class Splash extends JFrame {
             Thread.sleep(3000);
             setVisible(false);
 
-            new Login();
+            new Login(); // Ensure Login class exists and is correctly imported
         }catch (Exception e){
             e.printStackTrace();
         }
-
-
     }
+
     public static void main(String[] args) {
         new Splash();
     }

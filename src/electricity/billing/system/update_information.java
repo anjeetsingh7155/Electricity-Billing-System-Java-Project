@@ -124,23 +124,34 @@ public class update_information extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource()==update){
-            String saddress = addressText.getText();
-            String scity = cityText.getText();
-            String sstate = stateText.getText();
-            String semail = emailText.getText();
-            String sphone = phoneText.getText();
+        if (e.getSource() == update) {
+            String saddress = addressText.getText().trim();
+            String scity = cityText.getText().trim();
+            String sstate = stateText.getText().trim();
+            String semail = emailText.getText().trim();
+            String sphone = phoneText.getText().trim();
 
-            try{
+            try {
                 database c = new database();
-                c.statement.executeUpdate("update new_customer set address ='"+saddress+"', city = '"+scity+"', state = '"+sstate+"', email = '"+semail+"', phone_no ='"+sphone+"' where meter_no = '"+meter+"'");
 
-                JOptionPane.showMessageDialog(null,"User Information Updated Successfully");
+                // Log the query for debugging
+                String query = "UPDATE new_customer SET address = '" + saddress + "', city = '" + scity + "', state = '" + sstate + "', email = '" + semail + "', phone_no = '" + sphone + "' WHERE meter_no = '" + meter + "'";
+                System.out.println("Executing Query: " + query);
+
+                int rowsAffected = c.statement.executeUpdate(query);
+
+                if (rowsAffected > 0) {
+                    JOptionPane.showMessageDialog(null, "User Information Updated Successfully");
+                } else {
+                    JOptionPane.showMessageDialog(null, "No record found for the given meter number.");
+                }
+
                 setVisible(false);
-            }catch (Exception E){
-                E.printStackTrace();
+            } catch (Exception ex) {
+                ex.printStackTrace();
+                JOptionPane.showMessageDialog(null, "Error updating user information. Please try again.");
             }
-        }else {
+        } else {
             setVisible(false);
         }
     }
