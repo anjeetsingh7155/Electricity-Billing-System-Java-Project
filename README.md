@@ -9,7 +9,7 @@ A Java Swing-based desktop application for managing electricity billing operatio
 - **Language**: Java  
 - **GUI**: Java Swing (AWT + Swing components)  
 - **Database**: MySQL  
-- **IDE Used**: NetBeans / IntelliJ IDEA  
+- **Editor**: Visual Studio Code  
 - **JDBC**: For MySQL connectivity  
 
 ---
@@ -27,3 +27,12 @@ A Java Swing-based desktop application for managing electricity billing operatio
 - Check previous payments and history
 - Update profile information
 - Download bill receipts
+
+---
+
+## ⚙️ How to Run
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/anjeetsingh7155/Electricity-Billing-System-Java-Project.git
+   cd Electricity-Billing-System-Java-Project
